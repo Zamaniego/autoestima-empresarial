@@ -1,10 +1,33 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 
 export function Footer() {
   return (
     <footer className="border-t bg-gnozin-navy text-white">
+      {/* Newsletter Section */}
+      <div className="border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+          <div className="grid items-center gap-6 lg:grid-cols-2">
+            <div>
+              <h3
+                className="mb-1 text-lg font-bold uppercase tracking-wide"
+                style={{ fontFamily: "Montserrat, Arial Black, sans-serif" }}
+              >
+                Contenido para líderes PyME
+              </h3>
+              <p className="text-sm text-blue-200">
+                Ideas prácticas sobre liderazgo, delegación y crecimiento
+                empresarial. Sin spam — solo valor.
+              </p>
+            </div>
+            <NewsletterSignup />
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}

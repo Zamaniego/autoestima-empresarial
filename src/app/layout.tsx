@@ -3,6 +3,7 @@ import { Montserrat, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { StickyCta } from "@/components/sticky-cta";
 
 const montserrat = Montserrat({
   variable: "--font-heading",
@@ -41,6 +42,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <StickyCta />
       </body>
     </html>
   );

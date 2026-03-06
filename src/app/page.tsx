@@ -9,18 +9,25 @@ import {
   TrendingDown,
   UserX,
   Lock,
+  CheckCircle2,
+  Calendar,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TriageQuiz } from "@/components/triage-quiz";
+import { AnimatedHeadlines } from "@/components/animated-headlines";
+import { PersonaSelector } from "@/components/persona-selector";
+import { LeadMagnet } from "@/components/lead-magnet";
+import { TransformationStories } from "@/components/transformation-stories";
+import { MethodologyVisual } from "@/components/methodology-visual";
 
 export default function Home() {
   return (
     <>
-      {/* ── Hero — Pain-first ── */}
+      {/* ── Hero — Animated Headlines ── */}
       <section className="gnozin-gradient relative overflow-hidden text-white">
         <div className="gnozin-diagonal absolute inset-0 bg-gnozin-navy/20" />
         <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <p
               className="mb-4 text-sm font-bold uppercase tracking-[4px] text-gnozin-sky"
               style={{
@@ -29,15 +36,10 @@ export default function Home() {
             >
               Autoestima Empresarial
             </p>
-            <h1
-              className="mb-6 text-4xl font-black leading-tight sm:text-5xl lg:text-6xl"
-              style={{
-                fontFamily: "var(--font-heading), Montserrat, sans-serif",
-              }}
-            >
-              SI TU EMPRESA NO FUNCIONA SIN TI, NO TIENES UNA EMPRESA.
-            </h1>
-            <p className="mb-8 max-w-lg text-lg leading-relaxed text-blue-100">
+
+            <AnimatedHeadlines />
+
+            <p className="mt-8 mb-10 max-w-lg text-lg leading-relaxed text-blue-100">
               Trabajas 12 horas diarias, tu equipo no toma decisiones sin
               preguntarte, y llevas meses sin poder tomar vacaciones. Eso no es
               liderazgo — es una trampa. Y tiene solución.
@@ -66,8 +68,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Pain Agitation Section (NEW) ── */}
+      {/* ── Persona Selector — ¿Quién eres? ── */}
       <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <p
+            className="mb-2 text-center text-sm font-bold uppercase tracking-[3px] text-gnozin-blue"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            ¿Cuál es tu situación?
+          </p>
+          <h2
+            className="mb-4 text-center text-2xl font-bold text-gnozin-navy sm:text-3xl"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            No todos los líderes están atrapados por las mismas razones
+          </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-center text-gnozin-steel">
+            Selecciona tu perfil y descubre los retos específicos que el
+            Programa Encaje resuelve para ti.
+          </p>
+          <PersonaSelector />
+        </div>
+      </section>
+
+      {/* ── Pain Agitation — ¿Te suena familiar? ── */}
+      <section className="bg-gnozin-cloud py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2
             className="mb-4 text-center text-2xl font-bold uppercase tracking-wide text-gnozin-navy sm:text-3xl"
@@ -75,12 +104,12 @@ export default function Home() {
               fontFamily: "var(--font-heading), Montserrat, sans-serif",
             }}
           >
-            ¿Te suena familiar?
+            La Ley del Sándwich
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-gnozin-steel">
-            La mayoría de los líderes PyME viven atrapados en lo que llamamos la
-            &ldquo;Ley del Sándwich&rdquo;: presionados por el mercado desde arriba
-            y por su equipo desde abajo — sin espacio para pensar, crecer o respirar.
+            La mayoría de los líderes PyME viven atrapados: presionados por el
+            mercado desde arriba y por su equipo desde abajo — sin espacio para
+            pensar, crecer o respirar.
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -107,7 +136,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="group rounded-xl border-2 border-transparent bg-gnozin-cloud p-6 transition-all hover:border-gnozin-blue/30 hover:shadow-md"
+                className="group rounded-xl border-2 border-transparent bg-white p-6 transition-all hover:border-gnozin-blue/30 hover:shadow-md"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gnozin-navy/10">
                   <item.icon className="h-6 w-6 text-gnozin-navy" />
@@ -147,71 +176,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Solution — Value Props ── */}
-      <section className="bg-gnozin-cloud py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2
-            className="mb-4 text-center text-2xl font-bold uppercase tracking-wide text-gnozin-navy sm:text-3xl"
+      {/* ── Methodology Visual — Programa Encaje ── */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <p
+            className="mb-2 text-center text-sm font-bold uppercase tracking-[3px] text-gnozin-blue"
             style={{
               fontFamily: "var(--font-heading), Montserrat, sans-serif",
             }}
           >
-            Existe otra forma de liderar
+            Programa Encaje
+          </p>
+          <h2
+            className="mb-4 text-center text-2xl font-bold text-gnozin-navy sm:text-3xl"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            3 fases. 6 semanas. Resultados reales.
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-gnozin-steel">
-            El Programa Encaje te da las herramientas para romper el ciclo de
-            dependencia en 6 semanas — no teoría, sino un plan concreto para
-            tu empresa real.
+            No es teoría. Es un plan concreto para tu empresa real — diseñado
+            con +30 años de experiencia con líderes PyME.
           </p>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: Target,
-                title: "Claridad",
-                desc: "Descubre qué hace única a tu empresa y deja de competir por precio.",
-              },
-              {
-                icon: Users,
-                title: "Delegación",
-                desc: "Aprende a soltar el control sin que tu empresa se desmorone.",
-              },
-              {
-                icon: Zap,
-                title: "Dirección",
-                desc: "Un plan de acción concreto a 90 días — no más incertidumbre.",
-              },
-              {
-                icon: Shield,
-                title: "Identidad",
-                desc: "Encuentra tu voz como líder, ya seas fundador o heredero.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gnozin-blue/10">
-                  <item.icon className="h-6 w-6 text-gnozin-blue" />
-                </div>
-                <h3
-                  className="mb-2 text-lg font-bold text-gnozin-navy"
-                  style={{
-                    fontFamily: "var(--font-heading), Montserrat, sans-serif",
-                  }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-gnozin-steel">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+          <MethodologyVisual />
+          <div className="mt-10 text-center">
+            <Button
+              className="bg-gnozin-blue text-white hover:bg-gnozin-navy"
+              asChild
+            >
+              <Link href="/programa">
+                Ver detalles del programa
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
+      {/* ── Transformation Stories ── */}
+      <section className="bg-gnozin-cloud py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <p
+            className="mb-2 text-center text-sm font-bold uppercase tracking-[3px] text-gnozin-blue"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            Historias de Transformación
+          </p>
+          <h2
+            className="mb-4 text-center text-2xl font-bold text-gnozin-navy sm:text-3xl"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            Líderes que rompieron el ciclo
+          </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-center text-gnozin-steel">
+            Estos empresarios estaban exactamente donde tú estás ahora.
+            Así fue su transformación.
+          </p>
+          <TransformationStories />
+        </div>
+      </section>
+
+      {/* ── Lead Magnet ── */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <LeadMagnet />
+        </div>
+      </section>
+
       {/* ── Triage Quiz ── */}
-      <section id="diagnostico" className="bg-white py-16 sm:py-20">
+      <section id="diagnostico" className="bg-gnozin-cloud py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="mb-10 text-center">
             <p
@@ -280,16 +318,32 @@ export default function Home() {
             estancamiento. Agenda una sesión diagnóstica gratuita de 30 minutos
             con Gnozin Navarro — sin compromiso, sin presión, solo claridad.
           </p>
-          <Button
-            size="lg"
-            className="bg-gnozin-blue text-white hover:bg-gnozin-navy"
-            asChild
-          >
-            <Link href="/contacto">
-              Quiero mi sesión gratuita
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Button
+              size="lg"
+              className="bg-gnozin-blue text-white hover:bg-gnozin-navy"
+              asChild
+            >
+              <Link href="/contacto">
+                <Calendar className="mr-2 h-4 w-4" />
+                Quiero mi sesión gratuita
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-gnozin-navy/30 text-gnozin-navy hover:bg-gnozin-navy hover:text-white"
+              asChild
+            >
+              <a
+                href="https://wa.me/526677516464?text=Hola%20Gnozin%2C%20quiero%20agendar%20mi%20sesi%C3%B3n%20diagn%C3%B3stica"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Escribir por WhatsApp
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </>
