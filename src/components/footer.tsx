@@ -53,8 +53,10 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-blue-200">
               {[
+                { href: "/empieza-aqui", label: "Empieza Aquí" },
                 { href: "/programa", label: "Programa Encaje" },
-                { href: "/nosotros", label: "Nosotros" },
+                { href: "/libro", label: "Libro" },
+                { href: "/quien-es-gnozin", label: "¿Quién es Gnozin?" },
                 { href: "/casos", label: "Casos de Éxito" },
                 { href: "/contacto", label: "Contacto" },
               ].map((l) => (

@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const links = [
-  { href: "/", label: "Inicio" },
+  { href: "/empieza-aqui", label: "Empieza Aquí" },
   { href: "/programa", label: "Programa" },
-  { href: "/nosotros", label: "Nosotros" },
+  { href: "/libro", label: "Libro" },
+  { href: "/quien-es-gnozin", label: "Gnozin" },
   { href: "/casos", label: "Casos" },
-  { href: "/contacto", label: "Contacto" },
 ];
 
 export function Nav() {

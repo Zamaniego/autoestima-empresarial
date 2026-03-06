@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
+import { BreadcrumbNav } from "@/components/breadcrumb-nav";
 import { Footer } from "@/components/footer";
 import { StickyCta } from "@/components/sticky-cta";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
     <html lang="es" className={`${montserrat.variable} ${sourceSans.variable}`}>
       <body className="min-h-screen font-sans antialiased">
         <Nav />
+        <BreadcrumbNav />
         <main>{children}</main>
         <Footer />
         <StickyCta />
