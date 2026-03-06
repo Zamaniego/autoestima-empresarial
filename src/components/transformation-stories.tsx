@@ -20,8 +20,8 @@ const stories = [
   },
   {
     name: "Carolina S.",
-    role: "Heredera · Restaurante familiar",
-    profile: "Heredero" as const,
+    role: "Segunda Generación · Restaurante familiar",
+    profile: "Segunda Generación" as const,
     before: "La comparaban con su padre, sentía que la empresa nunca sería suya, tenía miedo de cambiar las cosas.",
     after: "Encontró su propia voz, modernizó sin destruir y reposicionó la marca con confianza.",
     metric: "+35%",

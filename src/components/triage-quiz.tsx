@@ -260,7 +260,7 @@ export function TriageQuiz() {
           </span>
           {profile && (
             <Badge variant="outline" className="border-gnozin-sky text-gnozin-navy text-xs">
-              {profile === "g1" ? "Fundador" : "Heredero"}
+              {profile === "g1" ? "Fundador" : "Segunda Generación"}
             </Badge>
           )}
         </div>

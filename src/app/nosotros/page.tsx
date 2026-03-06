@@ -27,7 +27,7 @@ export default function NosotrosPage() {
             Gnozin Navarro
           </h1>
           <p className="mx-auto max-w-xl text-lg text-blue-100">
-            Consultor de liderazgo empresarial, mentor de fundadores y herederos
+            Consultor de liderazgo empresarial, mentor de fundadores y líderes de segunda generación
             de empresas PyME en México.
           </p>
         </div>
@@ -202,7 +202,7 @@ export default function NosotrosPage() {
           </h2>
           <p className="mb-6 text-blue-100">
             Haz el diagnóstico gratuito y descubre si eres un Fundador o un
-            Heredero — y qué camino te conviene seguir.
+            Segunda Generación — y qué camino te conviene seguir.
           </p>
           <Button
             size="lg"

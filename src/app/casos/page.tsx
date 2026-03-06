@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata = {
   title: "Casos de Éxito — Autoestima Empresarial",
   description:
-    "Historias reales de fundadores y herederos que transformaron su liderazgo con Autoestima Empresarial.",
+    "Historias reales de fundadores y líderes de segunda generación que transformaron su liderazgo con Autoestima Empresarial.",
 };
 
 const testimonials = [
@@ -21,8 +21,8 @@ const testimonials = [
   },
   {
     name: "Carolina S.",
-    role: "Heredera · Restaurante familiar",
-    profile: "Heredero",
+    role: "Segunda Generación · Restaurante familiar",
+    profile: "Segunda Generación",
     quote:
       "Me comparaban constantemente con mi papá. Sentía que la empresa nunca iba a ser mía. Gnozin me ayudó a encontrar mi propia voz y modernizar sin destruir lo que funcionaba.",
     result: "Incrementó ventas 35% al reposicionar la marca",
@@ -37,8 +37,8 @@ const testimonials = [
   },
   {
     name: "Daniela V.",
-    role: "Heredera · Clínica dental",
-    profile: "Heredero",
+    role: "Segunda Generación · Clínica dental",
+    profile: "Segunda Generación",
     quote:
       "No sabía si quería seguir con la clínica de mi familia. Después de las 6 semanas, decidí quedarme pero hacerla completamente mía. Hoy siento orgullo de lo que estamos construyendo.",
     result: "Implementó modelo de atención propio con 95% de satisfacción",
@@ -53,8 +53,8 @@ const testimonials = [
   },
   {
     name: "Alejandra F.",
-    role: "Heredera · Comercializadora",
-    profile: "Heredero",
+    role: "Segunda Generación · Comercializadora",
+    profile: "Segunda Generación",
     quote:
       "La transición generacional estaba destruyendo la relación con mi familia. Gnozin nos ayudó a separar lo personal de lo empresarial y a definir roles claros.",
     result: "Logró transición generacional exitosa en 6 meses",

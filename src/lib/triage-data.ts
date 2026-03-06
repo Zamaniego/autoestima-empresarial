@@ -128,7 +128,7 @@ export const triageResults: Record<"g1" | "g2", TriageResult> = {
   },
   g2: {
     profile: "g2",
-    headline: "Eres un Heredero buscando tu identidad",
+    headline: "Eres Segunda Generación buscando tu identidad",
     description:
       "Recibiste una empresa que no fundaste, y sientes que necesitas hacerla tuya. " +
       "El Programa Encaje te guía para encontrar tu propia voz como líder, " +

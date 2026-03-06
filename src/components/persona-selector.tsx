@@ -21,9 +21,9 @@ const personas = {
       "El Programa Encaje te ayuda a descubrir qué hace única a tu empresa, cobrar lo que realmente vales y construir un equipo que funcione sin que estés encima.",
     cta: "Diagnóstico para Fundadores",
   },
-  heredero: {
+  segundaGeneracion: {
     icon: Crown,
-    label: "Soy Heredero",
+    label: "Soy Segunda Generación",
     tagline: "Tomé las riendas de un negocio familiar",
     pains: [
       "Te comparan constantemente con quien fundó la empresa",
@@ -33,12 +33,12 @@ const personas = {
     ],
     solution:
       "El Programa Encaje te da las herramientas para encontrar tu propia voz como líder, separar lo personal de lo empresarial y hacer la transición generacional sin destruir relaciones.",
-    cta: "Diagnóstico para Herederos",
+    cta: "Diagnóstico para Segunda Generación",
   },
 };
 
 export function PersonaSelector() {
-  const [selected, setSelected] = useState<"fundador" | "heredero" | null>(
+  const [selected, setSelected] = useState<"fundador" | "segundaGeneracion" | null>(
     null
   );
 

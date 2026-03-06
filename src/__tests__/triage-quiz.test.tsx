@@ -130,7 +130,7 @@ describe("TriageQuiz component", () => {
     fireEvent.click(screen.getByText("36 o más"));
 
     // Should detect g2 profile
-    expect(screen.getByText("Heredero")).toBeInTheDocument();
+    expect(screen.getByText("Segunda Generación")).toBeInTheDocument();
 
     // Sub Q1 for g2
     fireEvent.click(
@@ -144,7 +144,7 @@ describe("TriageQuiz component", () => {
 
     // Result
     expect(
-      screen.getByText("Eres un Heredero buscando tu identidad")
+      screen.getByText("Eres Segunda Generación buscando tu identidad")
     ).toBeInTheDocument();
   });
 
