@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -22,9 +23,14 @@ export function Nav() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight text-gnozin-navy" style={{ fontFamily: "Montserrat, Arial Black, sans-serif" }}>
-            AUTOESTIMA<span className="text-gnozin-blue"> EMPRESARIAL</span>
-          </span>
+          <Image
+            src="/images/gnozin-logo-dark.png"
+            alt="Autoestima Empresarial — Gnozin Navarro"
+            width={180}
+            height={37}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

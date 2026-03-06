@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Target,
@@ -23,46 +24,65 @@ import { MethodologyVisual } from "@/components/methodology-visual";
 export default function Home() {
   return (
     <>
-      {/* ── Hero — Animated Headlines ── */}
+      {/* ── Hero — Animated Headlines + Gnozin Photo ── */}
       <section className="gnozin-gradient relative overflow-hidden text-white">
         <div className="gnozin-diagonal absolute inset-0 bg-gnozin-navy/20" />
         <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
-          <div className="max-w-3xl">
-            <p
-              className="mb-4 text-sm font-bold uppercase tracking-[4px] text-gnozin-sky"
-              style={{
-                fontFamily: "var(--font-heading), Montserrat, sans-serif",
-              }}
-            >
-              Autoestima Empresarial
-            </p>
-
-            <AnimatedHeadlines />
-
-            <p className="mt-8 mb-10 max-w-lg text-lg leading-relaxed text-blue-100">
-              Trabajas 12 horas diarias, tu equipo no toma decisiones sin
-              preguntarte, y llevas meses sin poder tomar vacaciones. Eso no es
-              liderazgo — es una trampa. Y tiene solución.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Button
-                size="lg"
-                className="bg-white font-bold text-gnozin-navy hover:bg-gnozin-ice"
-                asChild
+          <div className="grid items-center gap-10 lg:grid-cols-5">
+            {/* Copy — 3 cols */}
+            <div className="lg:col-span-3">
+              <p
+                className="mb-4 text-sm font-bold uppercase tracking-[4px] text-gnozin-sky"
+                style={{
+                  fontFamily: "var(--font-heading), Montserrat, sans-serif",
+                }}
               >
-                <a href="#diagnostico">
-                  Descubre qué te tiene atrapado
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/40 text-white hover:bg-white/10"
-                asChild
-              >
-                <Link href="/programa">Ver el Programa Encaje</Link>
-              </Button>
+                Autoestima Empresarial
+              </p>
+
+              <AnimatedHeadlines />
+
+              <p className="mt-8 mb-10 max-w-lg text-lg leading-relaxed text-blue-100">
+                Trabajas 12 horas diarias, tu equipo no toma decisiones sin
+                preguntarte, y llevas meses sin poder tomar vacaciones. Eso no es
+                liderazgo — es una trampa. Y tiene solución.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Button
+                  size="lg"
+                  className="bg-white font-bold text-gnozin-navy hover:bg-gnozin-ice"
+                  asChild
+                >
+                  <a href="#diagnostico">
+                    Descubre qué te tiene atrapado
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/40 text-white hover:bg-white/10"
+                  asChild
+                >
+                  <Link href="/programa">Ver el Programa Encaje</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Hero Photo — 2 cols */}
+            <div className="hidden lg:col-span-2 lg:flex lg:justify-end">
+              <div className="relative">
+                <Image
+                  src="/images/gnozin-hero.png"
+                  alt="Gnozin Navarro — Mentor de líderes PyME"
+                  width={420}
+                  height={780}
+                  className="relative z-10 h-auto max-h-[520px] w-auto object-contain drop-shadow-2xl"
+                  priority
+                />
+                {/* Decorative accent behind photo */}
+                <div className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl bg-white/10" />
+              </div>
             </div>
           </div>
         </div>

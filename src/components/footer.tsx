@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { NewsletterSignup } from "@/components/newsletter-signup";
@@ -32,12 +33,13 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <h3
-              className="mb-3 text-lg font-bold uppercase tracking-wide"
-              style={{ fontFamily: "Montserrat, Arial Black, sans-serif" }}
-            >
-              Autoestima Empresarial
-            </h3>
+            <Image
+              src="/images/gnozin-logo-white.png"
+              alt="Autoestima Empresarial — Gnozin Navarro"
+              width={180}
+              height={37}
+              className="mb-3 h-8 w-auto"
+            />
             <p className="text-sm leading-relaxed text-blue-200">
               Claridad, identidad y dirección para líderes de empresas PyME.
               +30 años de experiencia transformando líderes y empresas reales.
