@@ -1,12 +1,22 @@
 import Link from "next/link";
-import { ArrowRight, Target, Users, Zap, Shield } from "lucide-react";
+import {
+  ArrowRight,
+  Target,
+  Users,
+  Zap,
+  Shield,
+  AlertTriangle,
+  TrendingDown,
+  UserX,
+  Lock,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TriageQuiz } from "@/components/triage-quiz";
 
 export default function Home() {
   return (
     <>
-      {/* ── Hero ── */}
+      {/* ── Hero — Pain-first ── */}
       <section className="gnozin-gradient relative overflow-hidden text-white">
         <div className="gnozin-diagonal absolute inset-0 bg-gnozin-navy/20" />
         <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
@@ -25,12 +35,12 @@ export default function Home() {
                 fontFamily: "var(--font-heading), Montserrat, sans-serif",
               }}
             >
-              TU EMPRESA ES UN REFLEJO DE TI.
+              SI TU EMPRESA NO FUNCIONA SIN TI, NO TIENES UNA EMPRESA.
             </h1>
             <p className="mb-8 max-w-lg text-lg leading-relaxed text-blue-100">
-              Claridad, identidad y dirección para líderes que sienten que su
-              empresa depende demasiado de ellos. +30 años transformando
-              PyMEs reales.
+              Trabajas 12 horas diarias, tu equipo no toma decisiones sin
+              preguntarte, y llevas meses sin poder tomar vacaciones. Eso no es
+              liderazgo — es una trampa. Y tiene solución.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button
@@ -39,7 +49,7 @@ export default function Home() {
                 asChild
               >
                 <a href="#diagnostico">
-                  Haz tu diagnóstico gratis
+                  Descubre qué te tiene atrapado
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -49,24 +59,110 @@ export default function Home() {
                 className="border-white/40 text-white hover:bg-white/10"
                 asChild
               >
-                <Link href="/programa">Conoce el Programa Encaje</Link>
+                <Link href="/programa">Ver el Programa Encaje</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Value Propositions ── */}
-      <section className="bg-gnozin-cloud py-16 sm:py-20">
+      {/* ── Pain Agitation Section (NEW) ── */}
+      <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2
-            className="mb-12 text-center text-2xl font-bold uppercase tracking-wide text-gnozin-navy sm:text-3xl"
+            className="mb-4 text-center text-2xl font-bold uppercase tracking-wide text-gnozin-navy sm:text-3xl"
             style={{
               fontFamily: "var(--font-heading), Montserrat, sans-serif",
             }}
           >
-            ¿Por qué Autoestima Empresarial?
+            ¿Te suena familiar?
           </h2>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-gnozin-steel">
+            La mayoría de los líderes PyME viven atrapados en lo que llamamos la
+            &ldquo;Ley del Sándwich&rdquo;: presionados por el mercado desde arriba
+            y por su equipo desde abajo — sin espacio para pensar, crecer o respirar.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: Lock,
+                title: "Dependencia total",
+                pain: "Tu empresa se paraliza cuando no estás. Cada decisión pasa por ti. No puedes faltar ni un día.",
+              },
+              {
+                icon: TrendingDown,
+                title: "Estancamiento",
+                pain: "Facturas lo mismo que hace 3 años. Trabajas más pero no ganas más. Compites solo por precio.",
+              },
+              {
+                icon: UserX,
+                title: "Equipo sin rumbo",
+                pain: "Contratas, capacitas, y se van. O peor: se quedan pero no rinden. No sabes cómo motivarlos.",
+              },
+              {
+                icon: AlertTriangle,
+                title: "Identidad perdida",
+                pain: "No sabes qué hace especial a tu empresa. Cobras menos de lo que vales. No puedes articular tu valor.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="group rounded-xl border-2 border-transparent bg-gnozin-cloud p-6 transition-all hover:border-gnozin-blue/30 hover:shadow-md"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gnozin-navy/10">
+                  <item.icon className="h-6 w-6 text-gnozin-navy" />
+                </div>
+                <h3
+                  className="mb-2 text-lg font-bold text-gnozin-navy"
+                  style={{
+                    fontFamily: "var(--font-heading), Montserrat, sans-serif",
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gnozin-steel">
+                  {item.pain}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Agitation Callout ── */}
+      <section className="bg-gnozin-navy py-12 text-white sm:py-16">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+          <p
+            className="text-xl font-bold leading-snug sm:text-2xl"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            &ldquo;Cada día que pasa sin resolver esto, tu empresa se vuelve
+            más frágil, tu equipo más dependiente y tú más agotado.&rdquo;
+          </p>
+          <p className="mt-4 text-sm text-gnozin-sky">
+            — Gnozin Navarro · +30 años transformando líderes PyME
+          </p>
+        </div>
+      </section>
+
+      {/* ── Solution — Value Props ── */}
+      <section className="bg-gnozin-cloud py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2
+            className="mb-4 text-center text-2xl font-bold uppercase tracking-wide text-gnozin-navy sm:text-3xl"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            Existe otra forma de liderar
+          </h2>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-gnozin-steel">
+            El Programa Encaje te da las herramientas para romper el ciclo de
+            dependencia en 6 semanas — no teoría, sino un plan concreto para
+            tu empresa real.
+          </p>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
@@ -124,7 +220,7 @@ export default function Home() {
                 fontFamily: "var(--font-heading), Montserrat, sans-serif",
               }}
             >
-              Diagnóstico Personalizado
+              Diagnóstico en 2 minutos
             </p>
             <h2
               className="text-2xl font-bold text-gnozin-navy sm:text-3xl"
@@ -132,8 +228,12 @@ export default function Home() {
                 fontFamily: "var(--font-heading), Montserrat, sans-serif",
               }}
             >
-              Descubre tu perfil de líder
+              ¿Qué tipo de líder atrapado eres?
             </h2>
+            <p className="mx-auto mt-3 max-w-xl text-gnozin-steel">
+              Responde 5 preguntas rápidas y descubre si tu mayor reto es de
+              identidad, de equipo o de dirección.
+            </p>
           </div>
           <TriageQuiz />
         </div>
@@ -145,8 +245,8 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-3">
             {[
               { stat: "+30", label: "Años de experiencia" },
-              { stat: "+250", label: "Líderes transformados" },
-              { stat: "6", label: "Semanas del programa" },
+              { stat: "+250", label: "Líderes que rompieron el ciclo" },
+              { stat: "6", label: "Semanas para ver resultados" },
             ].map((s) => (
               <div key={s.label}>
                 <p
@@ -164,7 +264,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Final CTA ── */}
+      {/* ── Final CTA — Urgency ── */}
       <section className="bg-gnozin-ice py-16 sm:py-20">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
           <h2
@@ -173,11 +273,12 @@ export default function Home() {
               fontFamily: "var(--font-heading), Montserrat, sans-serif",
             }}
           >
-            ¿Listo para transformar tu liderazgo?
+            No esperes a que la crisis te obligue a cambiar
           </h2>
           <p className="mb-8 text-gnozin-steel">
-            Agenda una sesión diagnóstica gratuita de 30 minutos con Gnozin
-            Navarro y descubre cómo el Programa Encaje puede ayudarte.
+            Cada semana que pospones esta decisión es otra semana de
+            estancamiento. Agenda una sesión diagnóstica gratuita de 30 minutos
+            con Gnozin Navarro — sin compromiso, sin presión, solo claridad.
           </p>
           <Button
             size="lg"
@@ -185,7 +286,7 @@ export default function Home() {
             asChild
           >
             <Link href="/contacto">
-              Agendar sesión gratuita
+              Quiero mi sesión gratuita
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

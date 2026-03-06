@@ -31,11 +31,12 @@ export default function ContactoPage() {
               fontFamily: "var(--font-heading), Montserrat, sans-serif",
             }}
           >
-            Hablemos
+            El primer paso es hablar
           </h1>
           <p className="mx-auto max-w-xl text-lg text-blue-100">
-            Agenda tu sesión diagnóstica gratuita de 30 minutos o déjanos un
-            mensaje. Sin compromiso, sin presión.
+            Si llegaste hasta aquí es porque algo no está funcionando como debería.
+            Agenda 30 minutos con Gnozin Navarro — sin costo, sin compromiso —
+            y empieza a ver con claridad lo que hoy se siente confuso.
           </p>
         </div>
       </section>
@@ -138,12 +139,12 @@ export default function ContactoPage() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="message">
-                          ¿Cuál es tu mayor reto como líder?
+                          ¿Qué es lo que más te frustra de tu empresa hoy?
                         </Label>
                         <textarea
                           id="message"
                           rows={4}
-                          placeholder="Cuéntanos brevemente tu situación..."
+                          placeholder="Ej: Mi empresa no funciona si no estoy presente..."
                           className="flex w-full rounded-md border border-gnozin-sky/30 bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gnozin-blue"
                         />
                       </div>

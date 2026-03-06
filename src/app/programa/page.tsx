@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata = {
   title: "Programa Encaje — Autoestima Empresarial",
   description:
-    "6 semanas para descubrir tu singularidad como líder, definir el valor de tu empresa y diseñar un plan de acción concreto.",
+    "Si tu empresa no funciona sin ti, estás atrapado. El Programa Encaje te da claridad, identidad y un plan de acción en 6 semanas.",
 };
 
 const weeks = [
@@ -64,9 +64,9 @@ export default function ProgramaPage() {
             Programa Encaje
           </h1>
           <p className="mx-auto max-w-xl text-lg text-blue-100">
-            El programa insignia de Autoestima Empresarial. 6 semanas para
-            descubrir tu singularidad, definir el valor real de tu empresa y
-            diseñar un plan de acción concreto.
+            Estás trabajando más que nunca pero tu empresa no crece. Tu equipo
+            depende de ti para todo. No es falta de esfuerzo — es falta de
+            claridad. En 6 semanas, esto cambia.
           </p>
         </div>
       </section>
@@ -170,8 +170,8 @@ export default function ProgramaPage() {
             Inversión
           </h2>
           <p className="mb-6 text-gnozin-steel">
-            Un precio accesible diseñado para líderes PyME que buscan resultados
-            reales.
+            ¿Cuánto te cuesta otro año de estancamiento? Un precio accesible
+            diseñado para líderes PyME que deciden dejar de postergar el cambio.
           </p>
           <Card className="border-2 border-gnozin-blue shadow-lg">
             <CardContent className="py-8">
