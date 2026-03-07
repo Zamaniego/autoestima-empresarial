@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Source_Sans_3 } from "next/font/google";
+import { Montserrat, Source_Sans_3, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
@@ -17,6 +17,14 @@ const sourceSans = Source_Sans_3({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -38,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${montserrat.variable} ${sourceSans.variable}`}>
+    <html lang="es" className={`${montserrat.variable} ${sourceSans.variable} ${playfair.variable}`}>
       <body className="min-h-screen font-sans antialiased">
         <Nav />
         <BreadcrumbNav />
