@@ -8,8 +8,11 @@ import {
   BookOpen,
   GraduationCap,
   Calendar,
+  ChevronRight,
+  Play,
 } from "lucide-react";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { NetflixCatalog } from "@/components/netflix-catalog";
 import { ScrollReveal, StaggerReveal } from "@/components/scroll-reveal";
 
 export default function Home() {
@@ -317,6 +320,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Netflix-style Catalog ── */}
+      <NetflixCatalog />
 
       {/* ── Rutas de entrada — warm cream, editorial CTAs ── */}
       <section className="relative overflow-hidden bg-gnozin-cream py-20 sm:py-28">

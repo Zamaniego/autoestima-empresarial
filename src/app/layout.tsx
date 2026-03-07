@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat, Source_Sans_3, Playfair_Display } from "next/font/google";
+import { Montserrat, Source_Sans_3, Playfair_Display, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
 import { Footer } from "@/components/footer";
 import { StickyCta } from "@/components/sticky-cta";
+import { WhatsAppPopup } from "@/components/whatsapp-popup";
+import { MobileNavbar } from "@/components/mobile-navbar";
 
 const montserrat = Montserrat({
   variable: "--font-heading",
@@ -28,6 +30,14 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+const ebGaramond = EB_Garamond({
+  variable: "--font-garamond",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Autoestima Empresarial — SER, HACER, TENER",
   description:
@@ -46,13 +56,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${montserrat.variable} ${sourceSans.variable} ${playfair.variable}`}>
+    <html lang="es" className={`${montserrat.variable} ${sourceSans.variable} ${playfair.variable} ${ebGaramond.variable}`}>
       <body className="min-h-screen font-sans antialiased">
         <Nav />
         <BreadcrumbNav />
-        <main>{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <StickyCta />
+        <WhatsAppPopup />
+        <MobileNavbar />
       </body>
     </html>
   );

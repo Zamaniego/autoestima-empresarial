@@ -62,6 +62,13 @@
   --color-gnozin-cream: #F5F0EB;
   --color-gnozin-warm: #EDE6DE;
   --color-gnozin-dark: #0F1A2E;
+
+  /* New mobile-first palette */
+  --color-ae-gray: #e8e8e8;
+  --color-ae-blue: #071620;
+
+  /* Garamond heading font */
+  --font-garamond: var(--font-garamond);
 }
 
 :root {
@@ -128,13 +135,18 @@
 
 /* ─── Editorial Typography (Peterson-inspired) ─── */
 
-/* Serif italic for major headlines */
+/* Serif italic for major headlines — Garamond primary */
 .editorial-headline {
-  font-family: var(--font-serif), "Playfair Display", Georgia, serif;
+  font-family: var(--font-garamond), "EB Garamond", Garamond, "garamond-premier-pro-subhead", Georgia, serif;
   font-style: italic;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
+}
+
+/* Explicit Garamond for H1/H2 */
+h1, h2 {
+  font-family: var(--font-garamond), "EB Garamond", Garamond, "garamond-premier-pro-subhead", Georgia, serif;
 }
 
 /* Uppercase tracked labels (Peterson signature) */
@@ -379,4 +391,218 @@
   background: rgba(15, 26, 46, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Mobile Bottom Navbar (App-style) ─── */
+.mobile-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #071620;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.mobile-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.mobile-navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 4px 8px;
+  min-height: 44px;
+  min-width: 44px;
+}
+.mobile-navbar-item.active,
+.mobile-navbar-item:hover {
+  color: #4A9FE5;
+}
+.mobile-navbar-item svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ─── WhatsApp Popup Modal ─── */
+.wa-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(7, 22, 32, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.wa-popup-card {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+.wa-popup-header {
+  background: #071620;
+  padding: 28px 24px 20px;
+  text-align: center;
+  color: #fff;
+}
+.wa-popup-header h3 {
+  font-family: var(--font-garamond), "EB Garamond", Garamond, serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.wa-popup-header p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.wa-popup-body {
+  padding: 24px;
+}
+.wa-popup-input {
+  width: 100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+.wa-popup-input:focus {
+  border-color: #0B6ABF;
+  background: #fff;
+}
+.wa-popup-btn {
+  width: 100%;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.15s;
+  min-height: 50px;
+}
+.wa-popup-btn:hover {
+  background: #1fb855;
+  transform: translateY(-1px);
+}
+.wa-popup-btn:active {
+  transform: translateY(0);
+}
+
+/* ─── Netflix-style Catalog Row ─── */
+.catalog-row {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  display: flex;
+  gap: 12px;
+  padding: 0 20px;
+}
+.catalog-row::-webkit-scrollbar {
+  display: none;
+}
+.catalog-card {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 2/3;
+  background: #071620;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.catalog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+.catalog-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 22, 32, 0.95) 0%, rgba(7, 22, 32, 0.3) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px;
+}
+.catalog-card-title {
+  font-family: var(--font-garamond), "EB Garamond", Garamond, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+.catalog-card-subtitle {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+
+/* iPhone-specific optimizations */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .mobile-navbar {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+@media (max-width: 767px) {
+  .catalog-card {
+    width: 140px;
+  }
+}
+
+/* Phone input overrides */
+.PhoneInput {
+  margin-bottom: 12px;
+}
+.PhoneInputInput {
+  width: 100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fafafa;
+}
+.PhoneInputInput:focus {
+  border-color: #0B6ABF;
+  background: #fff;
+}
+.PhoneInputCountry {
+  padding-right: 8px;
 }
