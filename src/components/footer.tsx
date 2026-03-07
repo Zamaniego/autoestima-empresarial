@@ -32,6 +32,8 @@ export function Footer() {
               {[
                 { href: "/empieza-aqui", label: "Empieza Aquí" },
                 { href: "/taller", label: "Taller" },
+                { href: "/libro", label: "Libro" },
+                { href: "/quien-es-gnozin", label: "Gnozin Navarro" },
                 { href: "/calendario", label: "Calendario" },
                 { href: "/biblioteca", label: "Biblioteca" },
                 { href: "/login", label: "Iniciar Sesión" },

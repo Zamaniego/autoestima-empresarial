@@ -8,8 +8,36 @@ import {
   BookOpen,
   GraduationCap,
   Calendar,
+  AlertTriangle,
+  Clock,
+  TrendingDown,
+  UserX,
+  User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const painPoints = [
+  {
+    icon: Clock,
+    pain: "Trabajas 12 horas diarias",
+    desc: "Tu empresa depende completamente de ti. Si no estás, todo se detiene. Eso no es dirigir — es sobrevivir.",
+  },
+  {
+    icon: TrendingDown,
+    pain: "Compites solo por precio",
+    desc: "Sabes que tu producto vale más, pero no logras comunicar esa diferencia. El mercado te obliga a bajar.",
+  },
+  {
+    icon: UserX,
+    pain: "Perdiste tu identidad en el negocio",
+    desc: "Empezaste con una visión clara, pero hoy ya no sabes dónde terminas tú y dónde empieza tu empresa.",
+  },
+  {
+    icon: AlertTriangle,
+    pain: "Tu equipo no responde sin ti",
+    desc: "Delegas, pero nada funciona como cuando tú lo haces. Terminas cargando todo de vuelta.",
+  },
+];
 
 export default function Home() {
   return (
@@ -62,8 +90,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── La Triqueta: SER, HACER, TENER ── */}
+      {/* ── Puntos de dolor ── */}
       <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <p
+            className="mb-2 text-center text-sm font-bold uppercase tracking-[3px] text-gnozin-blue"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            ¿Te suena familiar?
+          </p>
+          <h2
+            className="mb-4 text-center text-2xl font-bold text-gnozin-navy sm:text-3xl"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            Lo que la mayoría de emprendedores vive — pero nadie nombra
+          </h2>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-gnozin-steel">
+            No es falta de esfuerzo. No es falta de talento. Es un patrón
+            sistémico que la Autoestima Empresarial identifica y regula.
+          </p>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {painPoints.map((p) => (
+              <div
+                key={p.pain}
+                className="group rounded-xl border border-red-100 bg-red-50/40 p-6 transition-all hover:border-gnozin-blue/30 hover:bg-gnozin-ice/30 hover:shadow-md"
+              >
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-red-100 transition-colors group-hover:bg-gnozin-blue/10">
+                  <p.icon className="h-5 w-5 text-red-500 transition-colors group-hover:text-gnozin-blue" />
+                </div>
+                <h3
+                  className="mb-2 text-lg font-bold text-gnozin-navy"
+                  style={{
+                    fontFamily: "var(--font-heading), Montserrat, sans-serif",
+                  }}
+                >
+                  {p.pain}
+                </h3>
+                <p className="text-sm leading-relaxed text-gnozin-steel">
+                  {p.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 rounded-xl border-2 border-gnozin-blue/20 bg-gnozin-ice/50 p-6 text-center sm:p-8">
+            <p
+              className="text-lg font-bold text-gnozin-navy sm:text-xl"
+              style={{
+                fontFamily: "var(--font-heading), Montserrat, sans-serif",
+              }}
+            >
+              Si te identificas con al menos dos de estos puntos, tu empresa
+              está operando desde la supervivencia — no desde la singularidad.
+            </p>
+            <p className="mt-2 text-gnozin-steel">
+              La Autoestima Empresarial explica por qué, y qué hacer al
+              respecto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── La Triqueta: SER, HACER, TENER ── */}
+      <section className="bg-gnozin-cloud py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <p
             className="mb-2 text-center text-sm font-bold uppercase tracking-[3px] text-gnozin-blue"
@@ -112,7 +204,7 @@ export default function Home() {
             ].map((s) => (
               <div
                 key={s.sphere}
-                className="rounded-xl border border-gnozin-blue/15 bg-gnozin-ice/30 p-6 text-center"
+                className="rounded-xl border border-gnozin-blue/15 bg-white p-6 text-center shadow-sm"
               >
                 <div
                   className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl"
@@ -167,7 +259,7 @@ export default function Home() {
       </section>
 
       {/* ── Las Intersecciones ── */}
-      <section className="bg-gnozin-cloud py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <p
             className="mb-2 text-center text-sm font-bold uppercase tracking-[3px] text-gnozin-blue"
@@ -209,7 +301,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-gnozin-blue/15 bg-white p-6"
+                className="rounded-xl border border-gnozin-blue/15 bg-gnozin-cloud p-6"
               >
                 <p className="mb-1 text-xs font-bold uppercase tracking-[2px] text-gnozin-blue">
                   {item.between}
@@ -230,7 +322,7 @@ export default function Home() {
           </div>
 
           {/* Center convergent */}
-          <div className="mt-8 rounded-2xl border-2 border-gnozin-blue/20 bg-white p-8 text-center">
+          <div className="mt-8 rounded-2xl border-2 border-gnozin-blue/20 bg-gnozin-ice/30 p-8 text-center">
             <CircleDot className="mx-auto mb-3 h-10 w-10 text-gnozin-blue" />
             <p className="mb-1 text-xs font-bold uppercase tracking-[2px] text-gnozin-blue">
               Centro convergente
@@ -253,43 +345,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Para quién es ── */}
-      <section className="bg-white py-16 sm:py-20">
+      {/* ── Gnozin Navarro – preview card ── */}
+      <section className="gnozin-gradient py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
-          <h2
-            className="mb-4 text-center text-2xl font-bold text-gnozin-navy sm:text-3xl"
-            style={{
-              fontFamily: "var(--font-heading), Montserrat, sans-serif",
-            }}
-          >
-            ¿Para quién es este modelo?
-          </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-center text-gnozin-steel">
-            La Autoestima Empresarial es un marco de trabajo para
-            emprendedores que operan empresas reales y quieren entender por
-            qué su negocio funciona como funciona.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              "Emprendedores que trabajan 12 horas y no ven resultados proporcionales",
-              "Líderes cuya empresa se paraliza sin ellos",
-              "Fundadores que compiten solo por precio y no logran diferenciarse",
-              "Empresarios que sienten que perdieron su identidad dentro de su propio negocio",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-lg border border-gnozin-blue/10 bg-gnozin-ice/30 p-4"
+          <div className="grid items-center gap-10 lg:grid-cols-5">
+            <div className="lg:col-span-3">
+              <p
+                className="mb-2 text-sm font-bold uppercase tracking-[3px] text-gnozin-sky"
+                style={{
+                  fontFamily: "var(--font-heading), Montserrat, sans-serif",
+                }}
               >
-                <ArrowRight className="mt-0.5 h-5 w-5 shrink-0 text-gnozin-blue" />
-                <p className="text-gnozin-steel">{item}</p>
+                El autor del modelo
+              </p>
+              <h2
+                className="mb-4 text-2xl font-black uppercase sm:text-3xl"
+                style={{
+                  fontFamily: "var(--font-heading), Montserrat, sans-serif",
+                }}
+              >
+                ¿Quién es Gnozin Navarro?
+              </h2>
+              <p className="mb-3 leading-relaxed text-blue-100">
+                Gnozin no llegó al mundo de la consultoría desde un corporativo.
+                Creció rodeado de empresas PyME — viendo de cerca cómo el dueño
+                del taller, el médico con consultorio o el restaurantero se
+                desgastaban, convencidos de que así debían ser las cosas.
+              </p>
+              <p className="mb-6 leading-relaxed text-blue-100">
+                +30 años acompañando a más de 250 líderes de empresas PyME a
+                redescubrir su identidad y construir empresas que funcionen
+                sin depender exclusivamente de ellos.
+              </p>
+              <Button
+                className="bg-white font-bold text-gnozin-navy hover:bg-gnozin-ice"
+                asChild
+              >
+                <Link href="/quien-es-gnozin">
+                  Conoce su historia
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <div className="hidden lg:col-span-2 lg:flex lg:justify-center">
+              <div className="flex h-48 w-48 items-center justify-center rounded-full bg-white/10">
+                <User className="h-24 w-24 text-white/50" />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── Social Proof Strip ── */}
-      <section className="gnozin-gradient py-14 text-white">
+      <section className="bg-gnozin-navy py-14 text-white">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
           <div className="grid gap-8 sm:grid-cols-3">
             {[
@@ -315,7 +423,7 @@ export default function Home() {
 
       {/* ── Rutas de entrada ── */}
       <section className="bg-gnozin-ice py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <h2
             className="mb-10 text-center text-2xl font-bold text-gnozin-navy sm:text-3xl"
             style={{
@@ -324,7 +432,7 @@ export default function Home() {
           >
             ¿Por dónde empezar?
           </h2>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: BookOpen,
@@ -341,16 +449,23 @@ export default function Home() {
                 cta: "Ver el Taller",
               },
               {
+                icon: BookOpen,
+                title: "Lee el libro",
+                desc: "+30 años de experiencia condensados en un libro práctico y directo.",
+                href: "/libro",
+                cta: "Conoce el Libro",
+              },
+              {
                 icon: Calendar,
                 title: "Asiste a un evento",
-                desc: "Conferencias, talleres y masterclasses públicas y abiertas.",
+                desc: "Conferencias, talleres y masterclasses abiertas al público.",
                 href: "/calendario",
                 cta: "Ver Calendario",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col rounded-xl border border-gnozin-blue/15 bg-white p-6"
+                className="flex flex-col rounded-xl border border-gnozin-blue/15 bg-white p-6 shadow-sm"
               >
                 <item.icon className="mb-4 h-8 w-8 text-gnozin-blue" />
                 <h3

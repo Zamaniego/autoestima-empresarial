@@ -273,9 +273,9 @@ export default function LibroPage() {
               className="border-white/40 text-white hover:bg-white/10"
               asChild
             >
-              <Link href="/contacto">
+              <Link href="/taller">
                 <Calendar className="mr-2 h-4 w-4" />
-                Agendar sesión gratuita
+                Conocer el Taller
               </Link>
             </Button>
           </div>

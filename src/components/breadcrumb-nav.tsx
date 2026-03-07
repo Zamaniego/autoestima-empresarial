@@ -9,6 +9,8 @@ const routeLabels: Record<string, string> = {
   "/taller": "Taller",
   "/calendario": "Calendario",
   "/biblioteca": "Biblioteca",
+  "/libro": "Libro",
+  "/quien-es-gnozin": "¿Quién es Gnozin?",
   "/login": "Iniciar Sesión",
   "/contacto": "Contacto",
 };

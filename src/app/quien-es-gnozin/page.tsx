@@ -34,7 +34,7 @@ const milestones = [
   {
     period: "Hoy",
     title: "Autoestima Empresarial",
-    desc: "Creó el Programa Encaje y el concepto de Autoestima Empresarial — una metodología práctica que ayuda al líder a descubrir su singularidad, cobrar lo que vale y dirigir con claridad.",
+    desc: "Creó el Taller de Autoestima Empresarial y el modelo de la Triqueta — un marco antropológico que ayuda al líder a reconocer su singularidad, cobrar lo que vale y dirigir con claridad.",
   },
 ];
 
@@ -281,9 +281,9 @@ export default function QuienEsGnozinPage() {
             ¿Listo para platicar con Gnozin?
           </h2>
           <p className="mb-8 text-gnozin-steel">
-            Agenda una sesión diagnóstica gratuita de 30 minutos — sin
-            compromiso, sin presión. Solo una conversación honesta sobre tu
-            empresa y tu liderazgo.
+            Conoce el Taller de Autoestima Empresarial — una experiencia
+            presencial donde el modelo cobra vida. O explora el libro que
+            condensa +30 años de acompañamiento PyME.
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button
@@ -291,9 +291,9 @@ export default function QuienEsGnozinPage() {
               className="bg-gnozin-blue text-white hover:bg-gnozin-navy"
               asChild
             >
-              <Link href="/contacto">
+              <Link href="/taller">
                 <Calendar className="mr-2 h-4 w-4" />
-                Agendar sesión gratuita
+                Conocer el Taller
               </Link>
             </Button>
             <Button
