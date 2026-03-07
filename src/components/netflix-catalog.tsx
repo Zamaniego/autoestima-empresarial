@@ -4,6 +4,24 @@ import { useRef } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Play, BookOpen, Mic, Video } from "lucide-react";
 
+/* ─── Visual patterns for cards ─── */
+const patterns = [
+  // Diagonal stripes
+  `repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 16px)`,
+  // Concentric circles
+  `radial-gradient(circle at 50% 50%, transparent 30%, rgba(255,255,255,0.04) 32%, transparent 34%, transparent 50%, rgba(255,255,255,0.03) 52%, transparent 54%)`,
+  // Mesh dots
+  `radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)`,
+  // Cross-hatch
+  `repeating-linear-gradient(0deg, transparent, transparent 12px, rgba(255,255,255,0.02) 12px, rgba(255,255,255,0.02) 13px), repeating-linear-gradient(90deg, transparent, transparent 12px, rgba(255,255,255,0.02) 12px, rgba(255,255,255,0.02) 13px)`,
+  // Wave arcs
+  `radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%)`,
+  // Spotlight
+  `radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.08) 0%, transparent 60%)`,
+];
+
+const patternSizes = ["auto", "auto", "20px 20px", "auto", "auto", "auto"];
+
 /* ─── Catalog data ─── */
 const catalogRows = [
   {
@@ -14,43 +32,55 @@ const catalogRows = [
         title: "¿Qué es la Autoestima Empresarial?",
         subtitle: "Fundamento",
         color: "#0B6ABF",
+        accent: "#3B82F6",
         icon: BookOpen,
         href: "/empieza-aqui",
+        patternIdx: 0,
       },
       {
         title: "La Triqueta: SER, HACER, TENER",
         subtitle: "Modelo central",
         color: "#0A3D6B",
+        accent: "#0EA5E9",
         icon: BookOpen,
         href: "/modelo",
+        patternIdx: 1,
       },
       {
         title: "Las 3 Intersecciones",
         subtitle: "Liderazgo · Singularidad · Efectividad",
-        color: "#3A4A5A",
+        color: "#1E3A5F",
+        accent: "#38BDF8",
         icon: BookOpen,
         href: "/modelo",
+        patternIdx: 2,
       },
       {
         title: "El Centro Convergente",
         subtitle: "Bienestar como indicador",
         color: "#0B6ABF",
+        accent: "#60A5FA",
         icon: BookOpen,
         href: "/modelo",
+        patternIdx: 3,
       },
       {
         title: "Identidad del Emprendedor",
         subtitle: "El SER como ventaja competitiva",
         color: "#0A3D6B",
+        accent: "#7DD3FC",
         icon: BookOpen,
         href: "/empieza-aqui",
+        patternIdx: 4,
       },
       {
         title: "Sistemas y Autonomía",
         subtitle: "El HACER sin dependencia",
-        color: "#3A4A5A",
+        color: "#1E3A5F",
+        accent: "#0EA5E9",
         icon: BookOpen,
         href: "/empieza-aqui",
+        patternIdx: 5,
       },
     ],
   },
@@ -61,44 +91,56 @@ const catalogRows = [
       {
         title: "Taller: Autoestima Empresarial",
         subtitle: "6 sesiones · 90 min c/u",
-        color: "#0B6ABF",
+        color: "#7C3AED",
+        accent: "#A78BFA",
         icon: Video,
         href: "/taller",
+        patternIdx: 5,
       },
       {
         title: "Masterclass: Liderazgo PyME",
         subtitle: "Sesión intensiva",
-        color: "#0A3D6B",
+        color: "#6D28D9",
+        accent: "#C4B5FD",
         icon: Video,
         href: "/taller",
+        patternIdx: 4,
       },
       {
         title: "Workshop: Define tu SER",
         subtitle: "Ejercicio práctico",
-        color: "#3A4A5A",
+        color: "#4C1D95",
+        accent: "#8B5CF6",
         icon: Play,
         href: "/taller",
+        patternIdx: 3,
       },
       {
         title: "Taller: Sistemas que funcionan",
         subtitle: "El HACER en acción",
-        color: "#0B6ABF",
+        color: "#7C3AED",
+        accent: "#DDD6FE",
         icon: Video,
         href: "/taller",
+        patternIdx: 2,
       },
       {
         title: "Conferencia: Singularidad",
         subtitle: "Evento abierto",
-        color: "#0A3D6B",
+        color: "#6D28D9",
+        accent: "#A78BFA",
         icon: Mic,
         href: "/calendario",
+        patternIdx: 1,
       },
       {
         title: "Retiro Ejecutivo",
         subtitle: "Inmersión total · 2 días",
-        color: "#3A4A5A",
+        color: "#4C1D95",
+        accent: "#C4B5FD",
         icon: Play,
         href: "/calendario",
+        patternIdx: 0,
       },
     ],
   },
@@ -109,44 +151,56 @@ const catalogRows = [
       {
         title: "El Libro: Autoestima Empresarial",
         subtitle: "+30 años de experiencia",
-        color: "#0A3D6B",
+        color: "#0F766E",
+        accent: "#2DD4BF",
         icon: BookOpen,
         href: "/libro",
+        patternIdx: 2,
       },
       {
         title: "Guía: Diagnóstico Empresarial",
         subtitle: "Herramienta práctica",
-        color: "#3A4A5A",
+        color: "#115E59",
+        accent: "#5EEAD4",
         icon: BookOpen,
         href: "/biblioteca",
+        patternIdx: 0,
       },
       {
         title: "Video: Historia de Gnozin",
         subtitle: "El origen del modelo",
         color: "#0B6ABF",
+        accent: "#38BDF8",
         icon: Play,
         href: "/biblioteca",
+        patternIdx: 5,
       },
       {
         title: "Artículo: PyME y Supervivencia",
         subtitle: "Análisis profundo",
-        color: "#0A3D6B",
+        color: "#0F766E",
+        accent: "#99F6E4",
         icon: BookOpen,
         href: "/biblioteca",
+        patternIdx: 1,
       },
       {
         title: "Podcast: Conversaciones",
         subtitle: "Entrevistas con líderes",
-        color: "#3A4A5A",
+        color: "#115E59",
+        accent: "#2DD4BF",
         icon: Mic,
         href: "/biblioteca",
+        patternIdx: 4,
       },
       {
         title: "Caso de Estudio",
         subtitle: "Transformación real",
         color: "#0B6ABF",
+        accent: "#60A5FA",
         icon: BookOpen,
         href: "/biblioteca",
+        patternIdx: 3,
       },
     ],
   },
@@ -222,6 +276,8 @@ function CatalogRow({
       >
         {items.map((item, idx) => {
           const Icon = item.icon;
+          const pattern = patterns[item.patternIdx];
+          const patternSize = patternSizes[item.patternIdx];
           return (
             <Link
               key={idx}
@@ -229,20 +285,57 @@ function CatalogRow({
               className="catalog-card group"
               style={{ scrollSnapAlign: "start" }}
             >
-              {/* Card background gradient */}
+              {/* Multi-layer card background */}
+              {/* Base gradient */}
               <div
-                className="absolute inset-0 rounded-xl opacity-90 transition-opacity group-hover:opacity-100"
+                className="absolute inset-0 rounded-xl"
                 style={{
-                  background: `linear-gradient(135deg, ${item.color}dd 0%, ${item.color}88 50%, #071620 100%)`,
+                  background: `linear-gradient(160deg, ${item.color} 0%, ${item.color}cc 40%, #071620 100%)`,
+                }}
+              />
+
+              {/* Decorative accent orb */}
+              <div
+                className="absolute rounded-full blur-2xl"
+                style={{
+                  width: "120px",
+                  height: "120px",
+                  top: "-20px",
+                  right: "-20px",
+                  background: `radial-gradient(circle, ${item.accent}44, transparent 70%)`,
+                }}
+              />
+
+              {/* Pattern overlay */}
+              <div
+                className="absolute inset-0 rounded-xl"
+                style={{
+                  backgroundImage: pattern,
+                  backgroundSize: patternSize,
+                }}
+              />
+
+              {/* Bottom vignette for text readability */}
+              <div
+                className="absolute inset-0 rounded-xl"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 40%, transparent 60%)",
                 }}
               />
 
               {/* Hover glow */}
               <div
-                className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-30"
+                className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-40"
                 style={{
-                  background: `radial-gradient(circle at 30% 30%, ${item.color}, transparent 70%)`,
+                  background: `radial-gradient(circle at 30% 30%, ${item.accent}, transparent 70%)`,
                 }}
+              />
+
+              {/* Decorative corner accent */}
+              <div
+                className="absolute left-3 top-3 h-8 w-8 rounded-br-xl border-b border-r opacity-20"
+                style={{ borderColor: item.accent }}
               />
 
               {/* Content */}

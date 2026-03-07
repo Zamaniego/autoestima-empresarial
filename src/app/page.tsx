@@ -13,12 +13,17 @@ import {
 } from "lucide-react";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { NetflixCatalog } from "@/components/netflix-catalog";
+import { FAQ } from "@/components/faq";
+import { Newsletter } from "@/components/newsletter";
 import { ScrollReveal, StaggerReveal } from "@/components/scroll-reveal";
 
 export default function Home() {
   return (
     <>
       <HeroCarousel />
+
+      {/* ── Netflix-style Catalog (second section) ── */}
+      <NetflixCatalog />
 
       {/* ── La Triqueta: SER, HACER, TENER ── */}
       <section className="relative overflow-hidden bg-gnozin-cream py-20 sm:py-28">
@@ -321,9 +326,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Netflix-style Catalog ── */}
-      <NetflixCatalog />
-
       {/* ── Rutas de entrada — warm cream, editorial CTAs ── */}
       <section className="relative overflow-hidden bg-gnozin-cream py-20 sm:py-28">
         <div className="mesh-gradient-cream absolute inset-0" />
@@ -396,6 +398,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ── */}
+      <FAQ />
+
+      {/* ── Newsletter ── */}
+      <Newsletter />
     </>
   );
 }
