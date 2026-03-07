@@ -1,48 +1,25 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { NewsletterSignup } from "@/components/newsletter-signup";
 
 export function Footer() {
   return (
     <footer className="border-t bg-gnozin-navy text-white">
-      {/* Newsletter Section */}
-      <div className="border-b border-white/10">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-          <div className="grid items-center gap-6 lg:grid-cols-2">
-            <div>
-              <h3
-                className="mb-1 text-lg font-bold uppercase tracking-wide"
-                style={{ fontFamily: "Montserrat, Arial Black, sans-serif" }}
-              >
-                Contenido para líderes PyME
-              </h3>
-              <p className="text-sm text-blue-200">
-                Ideas prácticas sobre liderazgo, delegación y crecimiento
-                empresarial. Sin spam — solo valor.
-              </p>
-            </div>
-            <NewsletterSignup />
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Image
-              src="/images/gnozin-logo-white.png"
-              alt="Autoestima Empresarial — Gnozin Navarro"
-              width={180}
-              height={37}
-              className="mb-3 h-8 w-auto"
-            />
+            <p
+              className="mb-2 text-lg font-black uppercase tracking-wide"
+              style={{ fontFamily: "var(--font-heading), Montserrat, sans-serif" }}
+            >
+              Autoestima Empresarial
+            </p>
             <p className="text-sm leading-relaxed text-blue-200">
-              Claridad, identidad y dirección para líderes de empresas PyME.
-              +30 años de experiencia transformando líderes y empresas reales.
+              Un marco antropológico para proteger la singularidad del
+              emprendedor dentro del sistema económico y social. Por Gnozin
+              Navarro.
             </p>
           </div>
 
@@ -54,11 +31,10 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-blue-200">
               {[
                 { href: "/empieza-aqui", label: "Empieza Aquí" },
-                { href: "/programa", label: "Programa Encaje" },
-                { href: "/libro", label: "Libro" },
-                { href: "/quien-es-gnozin", label: "¿Quién es Gnozin?" },
-                { href: "/casos", label: "Casos de Éxito" },
-                { href: "/contacto", label: "Contacto" },
+                { href: "/taller", label: "Taller" },
+                { href: "/calendario", label: "Calendario" },
+                { href: "/biblioteca", label: "Biblioteca" },
+                { href: "/login", label: "Iniciar Sesión" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="transition-colors hover:text-white">
@@ -125,13 +101,14 @@ export function Footer() {
         {/* Watermark */}
         <div className="flex flex-col items-center gap-2 text-center">
           <p
-            className="text-sm font-medium uppercase tracking-[3px] text-gnozin-sky"
-            style={{ fontFamily: "Montserrat, Arial Black, sans-serif" }}
+            className="text-sm font-bold uppercase tracking-[3px] text-gnozin-sky"
+            style={{ fontFamily: "var(--font-heading), Montserrat, sans-serif" }}
           >
-            @GNOZIN
+            Autoestima Empresarial
           </p>
           <p className="text-xs text-blue-300">
-            gnozin.com &middot; &copy; {new Date().getFullYear()} Gnozin Navarro. Todos los derechos reservados.
+            Un modelo de Gnozin Navarro &middot; &copy;{" "}
+            {new Date().getFullYear()} Todos los derechos reservados.
           </p>
         </div>
       </div>

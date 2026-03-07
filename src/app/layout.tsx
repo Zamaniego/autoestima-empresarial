@@ -21,13 +21,13 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Autoestima Empresarial — Gnozin Navarro",
+  title: "Autoestima Empresarial — SER, HACER, TENER",
   description:
-    "Claridad, identidad y dirección para líderes de empresas PyME. Programa Encaje: 6 semanas que transforman tu liderazgo.",
+    "Modelo que protege la singularidad del emprendedor dentro del sistema económico y social. Talleres, biblioteca y herramientas para líderes PyME.",
   openGraph: {
-    title: "Autoestima Empresarial — Gnozin Navarro",
+    title: "Autoestima Empresarial",
     description:
-      "Claridad, identidad y dirección para líderes de empresas PyME.",
+      "Modelo que protege la singularidad del emprendedor dentro del sistema económico y social.",
     type: "website",
   },
 };

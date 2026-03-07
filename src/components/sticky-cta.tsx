@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, X } from "lucide-react";
+import { GraduationCap, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -12,7 +12,6 @@ export function StickyCta() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling 600px
       setVisible(window.scrollY > 600);
     };
     window.addEventListener("scroll", handleScroll);
@@ -33,14 +32,14 @@ export function StickyCta() {
         >
           <div className="flex items-center gap-3 p-3 sm:p-4">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gnozin-blue/10">
-              <Calendar className="h-5 w-5 text-gnozin-blue" />
+              <GraduationCap className="h-5 w-5 text-gnozin-blue" />
             </div>
             <div className="flex-1">
               <p className="text-sm font-bold text-gnozin-navy">
-                Sesión diagnóstica gratuita
+                1er Taller Autoestima Empresarial
               </p>
               <p className="text-xs text-gnozin-steel">
-                30 min con Gnozin · Sin compromiso
+                6 sesiones · 90 min · Vía Zoom
               </p>
             </div>
             <Button
@@ -48,7 +47,7 @@ export function StickyCta() {
               className="shrink-0 bg-gnozin-blue text-white hover:bg-gnozin-navy"
               asChild
             >
-              <Link href="/contacto">Agendar</Link>
+              <Link href="/taller">Ver Taller</Link>
             </Button>
             <button
               onClick={() => setDismissed(true)}

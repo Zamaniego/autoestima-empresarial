@@ -5,13 +5,11 @@ import { usePathname } from "next/navigation";
 import { ChevronRight, Home } from "lucide-react";
 
 const routeLabels: Record<string, string> = {
-  "/": "Inicio",
   "/empieza-aqui": "Empieza Aquí",
-  "/programa": "Programa Encaje",
-  "/libro": "Libro",
-  "/quien-es-gnozin": "¿Quién es Gnozin?",
-  "/nosotros": "Nosotros",
-  "/casos": "Casos de Éxito",
+  "/taller": "Taller",
+  "/calendario": "Calendario",
+  "/biblioteca": "Biblioteca",
+  "/login": "Iniciar Sesión",
   "/contacto": "Contacto",
 };
 
@@ -38,10 +36,9 @@ export function BreadcrumbNav() {
             <Link
               href="/"
               className="inline-flex items-center gap-1 rounded px-2 py-1 font-medium text-gnozin-blue transition-colors hover:bg-gnozin-blue/10 hover:text-gnozin-navy"
-              aria-label="Ir a Inicio"
+              aria-label="Ir a la página principal"
             >
               <Home className="h-4 w-4" aria-hidden="true" />
-              <span className="hidden sm:inline">Inicio</span>
             </Link>
           </li>
           {crumbs.map((crumb, i) => (

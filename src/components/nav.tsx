@@ -2,17 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const links = [
   { href: "/empieza-aqui", label: "Empieza Aquí" },
-  { href: "/programa", label: "Programa" },
-  { href: "/libro", label: "Libro" },
-  { href: "/quien-es-gnozin", label: "Gnozin" },
-  { href: "/casos", label: "Casos" },
+  { href: "/taller", label: "Taller" },
+  { href: "/calendario", label: "Calendario" },
+  { href: "/biblioteca", label: "Biblioteca" },
 ];
 
 export function Nav() {
@@ -21,16 +19,16 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        {/* Logo */}
+        {/* Logo — Text-based "Autoestima Empresarial" */}
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/images/gnozin-logo-dark.png"
-            alt="Autoestima Empresarial — Gnozin Navarro"
-            width={180}
-            height={37}
-            className="h-8 w-auto"
-            priority
-          />
+          <span
+            className="text-lg font-black uppercase tracking-tight text-gnozin-navy sm:text-xl"
+            style={{
+              fontFamily: "var(--font-heading), Montserrat, sans-serif",
+            }}
+          >
+            Autoestima<span className="text-gnozin-blue"> Empresarial</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -45,7 +43,10 @@ export function Nav() {
             </Link>
           ))}
           <Button asChild className="ml-2 bg-gnozin-blue hover:bg-gnozin-navy text-white" size="sm">
-            <Link href="/contacto">Agendar Sesión</Link>
+            <Link href="/login">
+              <LogIn className="mr-1.5 h-4 w-4" />
+              Iniciar Sesión
+            </Link>
           </Button>
         </nav>
 
@@ -68,8 +69,9 @@ export function Nav() {
                 </Link>
               ))}
               <Button asChild className="mt-4 bg-gnozin-blue hover:bg-gnozin-navy text-white">
-                <Link href="/contacto" onClick={() => setOpen(false)}>
-                  Agendar Sesión
+                <Link href="/login" onClick={() => setOpen(false)}>
+                  <LogIn className="mr-1.5 h-4 w-4" />
+                  Iniciar Sesión
                 </Link>
               </Button>
             </nav>
